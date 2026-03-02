@@ -6,7 +6,7 @@ import Fotos from './pages/Fotos/Fotos'
 import Posts from './pages/Post/Posts'
 import Motivos from './pages/Motivos/Motivos'
 import Musicas from './pages/Musicas/Musicas'
-import Futuro from './pages/Futuro/Futuro'
+
 
 function App() {
 

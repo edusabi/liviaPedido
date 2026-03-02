@@ -20,7 +20,7 @@ function App() {
             <Route path='/posts' element={<Posts/>} />
             <Route path='/motivos' element={<Motivos/>} />
             <Route path='/musicas' element={<Musicas/>} />
-            <Route path='/futuro' element={<Futuro/>} />
+        
           </Routes>
         </BrowserRouter>
       </div>

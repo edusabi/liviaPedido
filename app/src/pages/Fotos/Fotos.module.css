@@ -1,0 +1,189 @@
+/* --- Importação de Fontes (Idealmente coloque no index.css global, mas funciona aqui) --- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
+/* --- Container Principal --- */
+.container {
+  padding-top: 100px; /* Espaço para a Navbar */
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* IMPORTANTE: Sem background-color aqui para ver o Three.js no fundo */
+}
+
+/* Animação suave de entrada */
+.contentFadeIn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: #fff;
+  margin-bottom: 3rem;
+  /* Glow rosa no texto */
+  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8), 0 0 20px rgba(255, 105, 180, 0.5);
+  text-align: center;
+}
+
+/* --- Grid de Fotos --- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- Estilo do Card (Polaroid Neon) --- */
+.card {
+  width: 300px; 
+  /* Vidro mais elegante */
+  background: rgba(20, 20, 20, 0.6); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 105, 180, 0.3); /* Borda rosa sutil */
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico */
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Efeito Hover no Card */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 105, 180, 0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(255, 105, 180, 0.4); /* Glow rosa externo */
+  background: rgba(40, 40, 40, 0.7);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 320px; /* Fotos um pouco mais altas */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.card:hover .photo {
+  transform: scale(1.15); /* Zoom suave na foto */
+}
+
+/* --- Textos do Card --- */
+.info {
+  text-align: center;
+  padding: 0 5px;
+}
+
+.cardTitle {
+  font-family: 'Great Vibes', cursive;
+  color: #ff69b4; /* Hot Pink */
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+}
+
+.cardDesc {
+  font-family: 'Montserrat', sans-serif;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* --- Seção de Vídeos --- */
+.videoSection {
+  margin-top: 6rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.videoTitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(255, 183, 197, 0.8);
+}
+
+.videoSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #aaa;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Grid específico para os vídeos */
+.videoGrid {
+  display: grid;
+  /* Cria colunas responsivas: cabe quantos derem */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  padding: 20px;
+}
+
+.videoCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 105, 180, 0.5);
+}
+
+.videoPlayer {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  background-color: #000;
+  /* Se seus vídeos forem de celular (em pé), use 9/16. 
+     Se forem deitado (YouTube), use 16/9 */
+  aspect-ratio: 9/16; 
+  object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .title { font-size: 3rem; }
+  .videoTitle { font-size: 2.5rem; }
+  .card { width: 100%; max-width: 350px; }
+  .grid { padding: 0 15px; }
+  .videoGrid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px;}
+}

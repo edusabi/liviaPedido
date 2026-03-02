@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap');
+.page {
+    background-color: black;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  margin-top: 100vh;
+  text-shadow: 0 0 10px rgba(255, 0, 200, 0.6);
+}
+
+/* Importando fontes bonitas do Google Fonts */
+
+.container {
+  margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  /* Garante que fique acima do fundo de estrelas */
+  z-index: 10; 
+  position: relative;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive; /* Fonte manuscrita romântica */
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #ffb7c5; /* Rosa claro */
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+  font-weight: 400;
+}
+
+.timerGrid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.timeCard {
+  background: rgba(255, 255, 255, 0.1); /* Fundo vidro */
+  backdrop-filter: blur(5px); /* Efeito de desfoque */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  color: #ffcce0;
+}
+
+.footer {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  .title { font-size: 2.5rem; }
+  .timerGrid { gap: 0.8rem; }
+  .timeCard { padding: 1rem; min-width: 80px; }
+  .number { font-size: 1.8rem; }
+  .label { font-size: 0.7rem; }
+}

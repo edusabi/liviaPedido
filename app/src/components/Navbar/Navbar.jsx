@@ -31,12 +31,6 @@ const Navbar = () => {
             Posts
           </NavLink>
 
-          <NavLink 
-            to="/motivos" 
-            className={({ isActive }) => (isActive ? `${style.link} ${style.activeLink}` : style.link)}
-          >
-            Motivos
-          </NavLink>
         </div>
 
     </nav>

@@ -4,7 +4,6 @@ import Home from './pages/Home/Home'
 import InitialPage from './pages/InitialPage/InitialPage'
 import Fotos from './pages/Fotos/Fotos'
 import Posts from './pages/Post/Posts'
-import Motivos from './pages/Motivos/Motivos'
 import Musicas from './pages/Musicas/Musicas'
 
 
@@ -18,7 +17,6 @@ function App() {
             <Route path='/initialPage' element={<InitialPage/>} />
             <Route path='/fotos' element={<Fotos/>} />
             <Route path='/posts' element={<Posts/>} />
-            <Route path='/motivos' element={<Motivos/>} />
             <Route path='/musicas' element={<Musicas/>} />
         
           </Routes>
